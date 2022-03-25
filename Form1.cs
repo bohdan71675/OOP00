@@ -33,5 +33,18 @@ namespace OOP00
             }
             else { MessageBox.Show(student.GetJmeno() + " neni klasifikovan"); }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Student student2 = new Student("Jan", 3, 1, 2);
+
+            double p = student2.Prumer();
+            if (p != -1)
+            {
+                MessageBox.Show(student2.GetJmeno() + " ma prumer znamek: " + p);
+            }
+            else { MessageBox.Show(student2.GetJmeno() + " neni klasifikovan"); }
+
+        }
     }
 }
