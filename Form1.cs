@@ -19,12 +19,12 @@ namespace OOP00
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Student student0 = new Student();
+            //Student student = new Student();
             Student student = new Student("Petr");
 
             student.OznamkujMAT(3);
             student.OznamkujCJL(2);
-            student.OznamkujPRG(6);
+            student.OznamkujPRG(5);
 
             double p = student.Prumer();
             if (p != -1)
@@ -44,6 +44,31 @@ namespace OOP00
                 MessageBox.Show(student2.GetJmeno() + " ma prumer znamek: " + p);
             }
             else { MessageBox.Show(student2.GetJmeno() + " neni klasifikovan"); }
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Student student1 = new Student("Pavel", 4, 4, 3, "Trebic");
+
+            MessageBox.Show(student1.GetJmeno() + " " + student1.GetBydliste());
+
+            student1.SetBydliste("Brno");
+
+            MessageBox.Show("Student se prestehoval");
+
+            MessageBox.Show(student1.GetJmeno() + " " + student1.GetBydliste());
+
+            Student student2 = new Student("Petr", "Jihlava");
+
+            MessageBox.Show(student2.GetJmeno() + " " + student2.GetBydliste());
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Student student1 = new Student("Vladislav", 1, 1, 1, "Praha");
+            MessageBox.Show(student1.ToString());
+            //MessageBox.Show(textBox1.ToString());
 
         }
     }

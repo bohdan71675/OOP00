@@ -14,13 +14,21 @@ namespace OOP00
         private int znamkaCJL;
         private int znamkaPRG;
 
-       // public Student()
-       // {
-           
-       // }
+        private string bydliste;
+
+        //public Student()
+        //{
+
+        //}
         public Student(string jmeno)
         {
             this.jmeno = jmeno;
+        }
+
+        public Student(string jmeno, string bydliste)
+        {
+            this.jmeno = jmeno;
+            this.bydliste = bydliste;
         }
         public Student(string jmeno, int znamkaMAT, int znamkaCJL, int znamkaPRG)
         {
@@ -29,9 +37,28 @@ namespace OOP00
             this.znamkaMAT = znamkaMAT;
             this.znamkaPRG = znamkaPRG;
         }
+
+        public Student(string jmeno, int znamkaMAT, int znamkaCJL, int znamkaPRG, string bydliste)
+        {
+            this.jmeno = jmeno;
+            this.znamkaCJL = znamkaCJL;
+            this.znamkaMAT = znamkaMAT;
+            this.znamkaPRG = znamkaPRG;
+            this.bydliste = bydliste;
+        }
         public string GetJmeno()
         {
             return jmeno;
+        }
+
+        public string GetBydliste()
+        {
+            return bydliste;
+        }
+
+        public void SetBydliste(string bydliste)
+        {
+            this.bydliste = bydliste;
         }
 
         public void OznamkujMAT(int znamka)
@@ -64,6 +91,18 @@ namespace OOP00
             }
             else { return -1; }
 
+        }
+
+        public override string ToString()
+        {
+            string s = "\nJmeno: " + jmeno
+                        + "\nZnamka z MAT: " + znamkaMAT
+                        + "\nZnamka z CJL: " + znamkaCJL
+                        + "\nZnamka z PRG: " + znamkaPRG
+                        + "\nBydliste: " + bydliste
+                        + "\nStudijni prumer: " + Prumer();
+
+            return base.ToString() + s;
         }
     }
 }
