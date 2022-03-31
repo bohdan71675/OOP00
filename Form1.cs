@@ -71,5 +71,23 @@ namespace OOP00
             //MessageBox.Show(textBox1.ToString());
 
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Osoba osoba1 = new Osoba("Martin ");
+            osoba1.SetPrijmeni("Dostal");
+            MessageBox.Show(osoba1.ToString());
+
+            Osoba osoba2 = new Osoba("Martinek ", "Dostalek");
+            MessageBox.Show(osoba2.GetJmeno() + osoba2.GetPrijmeni());
+            MessageBox.Show(osoba2.CeleJmenoVelkymi());
+            MessageBox.Show(osoba2.ToString());
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Osoba osoba3 = new Osoba("Martin ", "Dostal", 178, 65.8);
+            MessageBox.Show(osoba3.ToString());
+        }
     }
 }
