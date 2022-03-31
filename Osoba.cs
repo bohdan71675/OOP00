@@ -28,8 +28,15 @@ namespace OOP00
         {
             this.jmeno = jmeno;
             this.prijmeni = prijmeni;
-            this.vyska = vyska;
-            this.hmotnost = hmotnost;
+            if (vyska >= 15 && vyska <= 300)
+            {
+                this.vyska = vyska;
+            }
+            if (hmotnost >= 1 && hmotnost <= 500)
+            {
+                this.hmotnost = hmotnost;
+            }
+
         }
 
         public string GetJmeno()
@@ -60,7 +67,11 @@ namespace OOP00
 
         public void SetVyska(int vyska)
         {
-            this.vyska = vyska;
+            if (vyska >= 15 && vyska <= 300)
+            {
+                this.vyska = vyska;
+            }
+
         }
         public double GetHmotnost()
         {
@@ -69,17 +80,26 @@ namespace OOP00
 
         public void SetHmotost(double hmotnost)
         {
-            this.hmotnost = hmotnost;
+            if (hmotnost >= 1 && hmotnost <= 500)
+            {
+                this.hmotnost = hmotnost;
+            }
         }
 
+        public double BMI()
+        {
+            double bmi = ((double)hmotnost / (vyska * vyska)) / 10;
+            return bmi;
+        }
 
         public override string ToString()
         {
             string s = "\nJmeno: " + jmeno
                         + "\nPrijmeni: " + prijmeni
                         + "\n" + CeleJmenoVelkymi()
-                        + "\nVyska: " + vyska
-                        + "\nHmotnost: " + hmotnost;
+                        + "\nVyska: " + vyska + " cm"
+                        + "\nHmotnost: " + hmotnost + " kg"
+                        + "\nBMI: " + BMI();
 
             return base.ToString() + "\n" + s;
         }
