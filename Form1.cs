@@ -86,10 +86,17 @@ namespace OOP00
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Osoba osoba3 = new Osoba("Martin ", "Dostal", 178, 65.8);
-            osoba3.SetHmotost(0);
-            osoba3.SetVyska(4000);
+            Osoba osoba3 = new Osoba("Martin ", "Dostal", 178, 65);
             MessageBox.Show(osoba3.ToString());
+            osoba3.SetHmotost(4000);
+            osoba3.SetVyska(1);
+            MessageBox.Show(osoba3.ToString());
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            OsobaVlastnosti osobavl = new OsobaVlastnosti("Alena", "Vavrova", 180, 70);
+            MessageBox.Show(osobavl.ToString());
         }
     }
 }
